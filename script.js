@@ -23,14 +23,13 @@ function operate(a,b,operator)
         return wtfBOOOM
     }
 }
+const calculator = document.querySelector(".calculator")
+const keys = document.querySelector(".calculator-keys")
 const btn = document.querySelectorAll(".key-number");
-const operator= document.querySelectorAll(".key-operator")
-const display =document.querySelector("#display");
-const clear = document.querySelector(".key-clear")
-const equal = document.querySelector(".key-equal")
-let symbol = " "
+let symbol = null
 let number = " "
-let previousNumber = null
+let firstValue = null
+let secondValue = null
 
 function operateDisplay()
     {   //conctanate into the display
@@ -46,45 +45,3 @@ operator.forEach((operation)=>{
     operation.addEventListener("click",handleOperation)
 })
 //equal number(show the result)
-equal.addEventListener("click",function equal()
-{
-    if (previousNumber!==null)
-    {
-        let result = operate(previousNumber,number,symbol)
-        display.textContent= result
-
-    }
-});
-//clear function
-function clearButton()
-{
-    clear.addEventListener()
-}
-
-function handleOperation()
-{
-if (this.textContent === "+")
-{
-    symbol = "+"
-    previousNumber = number
-    number = " "
-}
-else if(this.textContent === "-")
-{
-    symbol = "-"
-    previousNumber = number
-    number = " "
-}
-else if(this.textContent === "/")
-{
-    symbol = "/"
-    previousNumber = number
-    number = " "
-}
-else if(this.textContent === "*")
-{
-    symbol = "*"
-    previousNumber = number
-    number = " "
-}
-}

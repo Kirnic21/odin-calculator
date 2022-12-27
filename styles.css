@@ -6,13 +6,13 @@ button {
     justify-content: center;
     color: #AAA;
   }
-.container{
+.calculator-keys{
     display:grid;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 100px 100px 100px;
     justify-content: center;
 }
-.operator
+.key-operator
 {
     background: #444;
     border: 1px solid #555;
@@ -21,7 +21,7 @@ button {
     justify-content: center;
     color: #AAA;
 }
-#display
+.calculator-display
 {
     display:flex;
     justify-content: center;
