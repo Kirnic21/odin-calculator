@@ -1,4 +1,5 @@
 //operator function(oprate two give numbers)
+
 function operate(a,b,operator)
 {
     if (operator === "+")
@@ -17,59 +18,73 @@ function operate(a,b,operator)
     {
         return parseInt(a)*parseInt(b)
     }
+    else if(operator === "/" && b === 0)
+    {
+        return wtfBOOOM
+    }
 }
 const btn = document.querySelectorAll(".key-number");
+const operator= document.querySelectorAll(".key-operator")
 const display =document.querySelector("#display");
 const clear = document.querySelector(".key-clear")
+const equal = document.querySelector(".key-equal")
 let symbol = " "
-let result = " "
 let number = " "
+let previousNumber = null
+
 function operateDisplay()
     {   //conctanate into the display
         number += this.textContent;
-        display.textContent=value;
-
-    }
-    console.log(value,value1,value2)
-function clearButton()
-    {
-        value = " ";
-        value1 = " "
-        display.textContent = value;
+        display.textContent=number;
     }
 //when click in a button,it shows it value on display
 btn.forEach((button)=>{
     button.addEventListener("click",operateDisplay)
 })
-btn.forEach((button)=>{
-    button.addEventListener("click",handleOperation)
+operator.forEach((operation)=>{
+    operation.addEventListener("click",operateDisplay)
+    operation.addEventListener("click",handleOperation)
 })
-clear.addEventListener("click",clearButton)
+//equal number(show the result)
+equal.addEventListener("click",function equal()
+{
+    if (previousNumber!==null)
+    {
+        let result = operate(previousNumber,number,symbol)
+        display.textContent= result
+
+    }
+});
+//clear function
+function clearButton()
+{
+    clear.addEventListener()
+}
+
 function handleOperation()
 {
 if (this.textContent === "+")
 {
-symbol = "+"
+    symbol = "+"
+    previousNumber = number
+    number = " "
 }
 else if(this.textContent === "-")
 {
-    symbol = "+"
+    symbol = "-"
+    previousNumber = number
+    number = " "
 }
 else if(this.textContent === "/")
 {
-    symbol = "+"
+    symbol = "/"
+    previousNumber = number
+    number = " "
 }
 else if(this.textContent === "*")
 {
-    symbol = "+"
+    symbol = "*"
+    previousNumber = number
+    number = " "
 }
-else if(this.textContent === "=")
-{
-    result = operate(value1,value,symbol)
-    display.textContent = result
-    value = " "
-    value1 = " "
 }
-console.log(value,value1)
-}
-function stringTogether()
