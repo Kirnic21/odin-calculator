@@ -25,4 +25,6 @@ button {
 {
     display:flex;
     justify-content: center;
+    border: 10em;
+    border-color: #555;
 }
