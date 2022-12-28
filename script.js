@@ -4,11 +4,11 @@ function operate(a,b,operator)
 {
     if (operator === "+")
     {
-        return parseInt(a)+parseInt(b)
+        return Math.round(parseInt(a)+parseInt(b))
     }
     else if (operator === "-")
     {
-        return parseInt(a)-parseInt(b)
+        return Math.round(parseInt(a)-parseInt(b))
     }
     else if (operator === "/" && b === "0")
     {
@@ -16,11 +16,11 @@ function operate(a,b,operator)
     }
     else if (operator === "/")
     {
-        return parseInt(a)/parseInt(b)
+        return Math.round(parseInt(a)/parseInt(b))
     }
     else if (operator === "*")
     {
-        return parseInt(a)*parseInt(b)
+        return Math.round(parseInt(a)*parseInt(b))
     }
     
 }
